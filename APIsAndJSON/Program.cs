@@ -4,15 +4,15 @@ namespace APIsAndJSON
 {
     public class Program
     {
+        public const int numberOfQuotes = 5;
         static void Main(string[] args)
         {
-           var client = new HttpClient();
+            for (int i = 0; i < numberOfQuotes; i++)
+            {
 
-            var kanyeURL = "https://api.kanye.rest";
-            var kanyeResponse = client.GetStringAsync(kanyeURL).Result;
-
-            var kanyeQuote = JsonObject.Parse(kanyeResponse).GetValue("quote").ToString();
-            Console.WriteLine(kanyeQuote);
+                 Ron_Swanson_and_Kanye_API.KanyeQuote();
+                 Ron_Swanson_and_Kanye_API.RonQuote();
+            }
         }
     }
 }
